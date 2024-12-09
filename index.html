@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pradip Kumar Datta - Personal Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom animation for title sliding effect */
+    @keyframes slideIn {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Custom fade-in animation for other content */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .animate-title {
+      animation: slideIn 1.5s ease-out forwards;
+    }
+
+    .animate-content {
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 1s; /* Delay for content to appear after title */
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-blue-600 text-white">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+  
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold">Pradip Kumar Datta</a>
+  
+      <!-- Navigation Menu -->
+      <nav class="hidden md:flex space-x-24">
+        <a href="#about" class="hover:text-black   text-xl transition">About</a>
+        <a href="#skills" class="hover:text-black  text-xl  transition">Skills</a>
+        <a href="#projects" class="hover:text-black text-xl  transition">Projects</a>
+        <a href="#contact" class="hover:text-black  text-xl  transition">Contact</a>
+      </nav>
+  
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="block md:hidden text-3xl focus:outline-none">
+        <span>&#9776;</span>
+      </button>
+    </div>
+  
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden bg-gray-700 md:hidden">
+      <nav class="flex flex-col space-y-4 py-4 px-6">
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+        <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Add this script for toggling the mobile menu -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+  
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+<!-- Hero Section -->
+<section class="bg-gray-100 min-h-screen flex items-center justify-center" style="background-image: url(image/hero_background1.gif);">
+  <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="container mx-auto px-6 text-center">
+      <!-- Greeting Message -->
+      <p class="text-4xl text-black hover:text-white mb-4">Welcome to my website! 👋</p>
+  
+      <!-- Name -->
+      <h1 class="text-5xl font-extrabold text-red-900 hover:text-blue-700 mb-4">I’m Pradip Kumar Datta</h1>
+  
+      <!-- Animated Title -->
+      <h2 class="text-5xl font-bold text-white hover:text-blue-700 mb-4">
+        <span id="animated-title"></span>
+      </h2>
+  
+      <!-- Passionate Statement -->
+      <p class="text-xl text-black italic hover:text-red-900 mb-4">
+        "Crafting beautiful and functional websites is my passion."
+      </p>
+  
+      <!-- Short About -->
+      <p class="text-lg text-black max-w-3xl mx-auto font-semibold hover:text-red-900 mb-6">
+        I am a dedicated Frontend Developer with expertise in HTML, CSS, Tailwind, WordPress, and design tools like Photoshop and Illustrator.
+      </p>
+  
+      <!-- Call-to-Action Button -->
+      <a href="#about" class="px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-600 transition shadow-lg">
+        Learn More About Me
+      </a>
+  
+      
+    </div>
+     <!-- Right Side: Image -->
+     <div class="flex justify-center">
+      <img src="image/pk_datta.jpg" alt="Pradip Kumar Datta" class=" transform hover:scale-105 hover:shadow-xl rounded-lg shadow-lg transition w-full md:w-3/4 slide-in">
+    </div>
+  </div>
+  
+</section>
+
+<!-- JavaScript for Sliding Animation -->
+<script>
+  const titles = ["Frontend Developer", "WordPress Expert", "Creative Designer"];
+  let currentIndex = 0;
+
+  function updateTitle() {
+    const titleElement = document.getElementById("animated-title");
+    titleElement.textContent = titles[currentIndex];
+    currentIndex = (currentIndex + 1) % titles.length; // Loop back to the first title
+  }
+
+  // Initial call and interval for sliding effect
+  updateTitle(); // Show the first title immediately
+  setInterval(updateTitle, 2000); // Change title every 2 seconds
+</script>
+
+
+  <!-- Short About Section -->
+<section id="about" class="py-16 bg-white" style="background-image: url(image/about_background.gif);">
+  <div class="container mx-auto px-6 text-center">
+    <!-- Heading -->
+    <h2 class="text-4xl font-bold text-gray-900 mb-4 hover:text-blue-700" >About Me</h2>
+
+    <!-- Short Introduction -->
+    <div class="lg:flex items-center justify-between space-y-8 lg:space-y-0">
+      <!-- Image -->
+      <div class="lg:w-[25%]">
+        <img src="image/pradip_img2.gif" alt="Pradip Kumar Datta" class="transition transform hover:scale-105 hover:shadow-xl rounded-full mx-auto w-[600px] h-[600px] object-cover shadow-lg">
+      </div>
+
+      <!-- Text Section -->
+      <div class="lg:w-[75%] lg:pl-10 text-justify">
+        <p class="text-lg text-black mb-4">
+          I am Pradip Kumar Datta, a passionate and skilled Frontend Developer with over 3 years of professional experience in building visually stunning, user-friendly, and efficient websites. My expertise lies in HTML, CSS, Tailwind CSS, and WordPress, enabling me to create dynamic and responsive designs tailored to meet client needs. Additionally, I bring a creative edge to my projects with proficiency in design tools like Photoshop and Illustrator, ensuring a perfect balance of functionality and aesthetics.
+        </p>
+        <p class="text-lg text-black mb-6">
+          With a strong educational foundation, including a Master's degree, a Computer Diploma, and certification as a Web Specialist, I have honed my technical and creative skills to provide top-notch solutions that elevate user experiences. My work is driven by a commitment to quality, attention to detail, and a relentless pursuit of innovation.
+        </p>
+        <h3 class="text-2xl font-semibold text-gray-800 hover:text-blue-700">Vision</h3> <br>
+        <p class="text-lg text-black mb-6">
+          To empower businesses and individuals by crafting innovative, user-centric web solutions that inspire and connect people globally.
+        </p>
+        <p class="text-lg text-black mb-6">
+          <h3 class="text-2xl font-semibold text-gray-800 hover:text-blue-700">Mission</h3> <br>
+          To combine cutting-edge technologies, creative designs, and strategic thinking to deliver high-quality digital experiences that exceed client expectations and foster long-term relationships. <br> <br> <br>
+        </p>
+        
+        <a href="#projects" class="bg-yellow-400 text-gray-800 py-3 px-6  rounded-full text-lg font-semibold hover:bg-yellow-300 transition duration-300">See My Projects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="bg-blue-300 py-16">
+  <div class="container mx-auto px-6 text-center">
+    <!-- Heading -->
+    <h2 class="text-4xl font-bold text-gray-900 hover:text-white mb-12">Skills & Experience</h2>
+
+    <!-- Skills Categories -->
+    <div class="space-y-12">
+
+      <!-- Frontend Development -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-semibold text-gray-800 hover:text-red-900">Frontend Development</h3>
+        <div class="flex justify-center gap-8">
+          <!-- HTML -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <img src="image/html5.png" alt="HTML5" class="w-20 mx-auto mb-4">
+            <h4 class="text-xl font-semibold text-gray-800">HTML5</h4>
+            <p class="text-gray-600">Intermediate</p>
+          </div>
+          <!-- CSS -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <img src="image/css3.png" alt="CSS3" class="w-20 mx-auto mb-4">
+            <h4 class="text-xl font-semibold text-gray-800">CSS3</h4>
+            <p class="text-gray-600">Advanced</p>
+          </div>
+          <!-- Tailwind CSS -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <img src="image/tailwind.png" alt="Tailwind CSS" class="w-20 mx-auto mb-4">
+            <h4 class="text-xl font-semibold text-gray-800">Tailwind CSS</h4>
+            <p class="text-gray-600">Advanced</p>
+          </div>
+        </div>
+        <p class="text-xl text-black hover:text-red-900 mt-4">
+          I have a solid understanding of HTML, CSS, and Tailwind CSS, enabling me to create beautiful, responsive websites. My experience with these technologies allows me to implement clean, semantic code that is SEO-friendly and adaptable to various screen sizes.
+        </p>
+      </div>
+
+      <!-- CMS Expertise -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-semibold text-gray-800">CMS Expertise</h3>
+        <div class="flex justify-center gap-8">
+          <!-- WordPress -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <img src="image/wordpress.png" alt="WordPress" class="w-20 mx-auto mb-4">
+            <h4 class="text-xl font-semibold text-gray-800">WordPress</h4>
+            <p class="text-gray-600">Expert</p>
+          </div>
+        </div>
+        <p class="text-xl text-black hover:text-red-900 mt-4">
+          With extensive experience working with WordPress, I build, customize, and manage websites using this CMS. From installing themes and plugins to customizing layouts and optimizing site performance, I ensure that my clients’ websites are both functional and easy to manage.
+        </p>
+      </div>
+
+      <!-- Design Skills -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-semibold text-gray-800">Design Skills</h3>
+        <div class="flex justify-center gap-8">
+          <!-- Photoshop -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <img src="image/ps.png" alt="Photoshop" class="w-20 mx-auto mb-4">
+            <h4 class="text-xl font-semibold text-gray-800">Photoshop</h4>
+            <p class="text-gray-600">Advanced</p>
+          </div>
+          <!-- Illustrator -->
+          <div class="bg-white p-8 rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <img src="image/illustrator.png" alt="Illustrator" class="w-20 mx-auto mb-4">
+            <h4 class="text-xl font-semibold text-gray-800">Illustrator</h4>
+            <p class="text-gray-600">Intermediate</p>
+          </div>
+        </div>
+        <p class="text-xl text-black hover:text-red-900 mt-4">
+          I am skilled in both Adobe Photoshop and Illustrator, which allows me to create everything from logos and website mockups to detailed vector illustrations. These tools help me bring ideas to life with precision and creativity.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-gray-100" style="background-image: url(image/project_section.gif);">
+  <div class="container mx-auto px-6 lg:px-20">
+    <!-- Section Title -->
+    <h2 class="text-4xl font-bold text-center text-gray-800 hover:text-red-900 mb-12">My Projects</h2>
+
+    <!-- Project Grid -->
+    <div class="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Project Card 01 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-300">
+        <img class="w-full h-52 object-cover" src="image/project_1.gif" alt="Project 1">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800">HolidayInn Travel Agency</h3>
+          <p class="mt-4 text-gray-600">
+            HolidayInn Travel is a modern and user-friendly travel platform designed to inspire and guide travelers in planning their dream vacations. Explore destinations, find exclusive packages, and enjoy a seamless browsing experience.
+          </p>
+          <!-- Buttons -->
+    <div class="mt-6 flex justify-between items-center">
+      <a href="projects/holidayinn.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">
+        Read More
+      </a>
+      <a href="https://pradipdatta011.github.io/HolidayInnTravel/" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">
+        View Project →
+      </a>
+    </div>
+  </div>
+</div>
+
+      <!-- Add More Project Cards 02 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-300">
+        <img class="w-full h-52 object-cover" src="image/project_2.gif" alt="Project 2">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800">TravelWorld Travel Agency</h3>
+          <p class="mt-4 text-gray-600">
+            TravelWorld Travel Agency is dedicated to turning your travel dreams into reality. With personalized itineraries, expert guidance, and seamless bookings, we ensure every journey is unforgettable. Discover the world your way with TravelWorld!
+          </p>
+          <!-- Buttons -->
+        <div class="mt-6 flex justify-between items-center">
+        <a href="projects/holidayinn.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">
+        Read More
+        </a>
+        <a href="https://pradipdatta011.github.io/TravelWorld/" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">
+        View Project →
+      </a>
+    </div>
+  </div>
+</div>
+
+      <!-- Repeat for Other Projects  03-->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-300">
+        <img class="w-full h-52 object-cover" src="image/project_3.gif" alt="Project 3">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800">Furniro Furniture Shorom</h3>
+          <p class="mt-4 text-gray-600">
+            Furniro Furniture offers stylish, high-quality furniture designed to transform your spaces. From modern to classic designs, we provide functional and elegant solutions to enhance your home or office. Experience comfort and craftsmanship with Furniro!
+          </p>
+          <!-- Buttons -->
+         <div class="mt-6 flex justify-between items-center">
+         <a href="projects/holidayinn.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">
+        Read More
+        </a>
+        <a href="https://pradipdatta011.github.io/Furniro/" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">
+        View Project →
+      </a>
+    </div>
+  </div>
+ </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-yellow-50" style="background-image: url(image/contact_background.png);">
+  <div class="container mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-4xl font-bold text-white hover:text-green-500 mb-12">Contact Me</h2>
+
+    <!-- Two Columns Layout -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+
+      <!-- Contact Details -->
+      <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+        <h3 class="text-2xl font-semibold text-gray-800  hover:text-red-700 mb-6">Contact Details</h3>
+        <p class="text-lg text-gray-600  hover:text-blue-800 mb-6">You can reach me through the following contact details:</p>
+        
+        <ul class="space-y-4">
+          <!-- Phone -->
+          <li class="flex items-center space-x-4">
+            <img src="https://img.icons8.com/ios/50/000000/phone.png" alt="Phone" class="w-6 h-6">
+            <span class="text-gray-600">+8801717903093</span>
+          </li>
+
+          <!-- Email -->
+          <li class="flex items-center space-x-4">
+            <img src="https://img.icons8.com/ios/50/000000/email.png" alt="Email" class="w-6 h-6">
+            <span class="text-gray-600">pradipdatta011@gmail.com</span>
+          </li>
+
+          <!-- LinkedIn -->
+          <li class="flex items-center space-x-4">
+            <img src="https://img.icons8.com/ios/50/000000/linkedin.png" alt="LinkedIn" class="w-6 h-6">
+            <a href="www.linkedin.com/in/pradip-kumar-datta" class="text-blue-600 hover:text-blue-800">linkedin.com/in/pradip-kumar-datta</a>
+          </li>
+
+          <!-- GitHub -->
+          <li class="flex items-center space-x-4">
+            <img src="https://img.icons8.com/ios/50/000000/github.png" alt="GitHub" class="w-6 h-6">
+            <a href="https://github.com/pradipdatta011" class="text-gray-900 hover:text-gray-700">github.com/pradipdatta011</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+        <h3 class="text-2xl font-semibold text-gray-800 hover:text-red-700 mb-6">Contact Form</h3>
+        <form action="#" method="POST" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Name Input -->
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700 text-lg font-semibold mb-2">Your Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 text-lg font-semibold mb-2">Your Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+            </div>
+          </div>
+
+          <!-- Message Textarea -->
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700 text-lg font-semibold mb-2">Your Message</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-3 px-6 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Footer Section -->
+<footer class="bg-yellow-700 text-white py-12" style="background-image: url(image/footer_background.gif);">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+
+      <!-- Contact Information -->
+      <div>
+        <h3 class="text-xl font-semibold  hover:text-blue-800 mb-4">Contact Information</h3>
+        <ul>
+          <li>Pradip Kumar Datta</li>
+          <li>Email: pradipdatta011@gmail.com</li>
+          <li>Phone: +880 171790 3093</li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+        <ul>
+          <li><a href="#about" class="text-white  hover:text-red-700 transition">About Me</a></li>
+          <li><a href="#projects" class="text-white hover:text-red-700 transition">Projects</a></li>
+          <li><a href="#skills" class="text-white  hover:text-red-700 transition">Skills</a></li>
+          <li><a href="#contact" class="text-white  hover:text-red-700 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media Links -->
+      <div>
+        <h3 class="text-xl font-semibold  hover:text-red-700 mb-4">Follow Me</h3>
+        <div class="flex gap-6">
+          <a href="www.linkedin.com/in/pradip-kumar-datta" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+            <img src="https://img.icons8.com/ios/452/linkedin.png" alt="LinkedIn" class="w-8 h-8">
+          </a>
+          <a href="https://github.com/pradipdatta011" target="_blank" class="text-gray-900 hover:text-gray-700 transition">
+            <img src="https://img.icons8.com/ios/452/github.png" alt="GitHub" class="w-8 h-8">
+          </a>
+          <a href="https://twitter.com/yourusername" target="_blank" class="text-blue-400 hover:text-blue-600 transition">
+            <img src="https://img.icons8.com/ios/452/twitter.png" alt="Twitter" class="w-8 h-8">
+          </a>
+          <a href="https://instagram.com/yourusername" target="_blank" class="text-pink-500 hover:text-pink-600 transition">
+            <img src="https://img.icons8.com/ios/452/instagram-new.png" alt="Instagram" class="w-8 h-8">
+          </a>
+        </div>
+      </div>
+
+      <!-- Newsletter Subscription -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+        <p class="text-gray-400 mb-4">Subscribe to get the latest updates and news.</p>
+        <form action="#" method="POST" class="flex">
+          <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 transition">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="mt-12 text-center text-white">
+      <p>&copy; 2024 Pradip Kumar Datta. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
